@@ -85,6 +85,8 @@ Suggests:	php-sockets
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
+%define		hordedir	/usr/share/horde
+
 # exclude optional dependencies
 %define		_noautoreq	 pear(Horde/Crypt.*) pear(Horde/Db.*) pear(Horde/Editor.*) pear(Horde/Form.*) pear(Horde/Http.*) pear(Horde/Icalendar.*) pear(Horde/Image.*) pear(Horde/Imap/Client.*) pear(Horde/Kolab/Server.*) pear(Horde/Kolab/Session.*) pear(Horde/Kolab/Storage.*) pear(Horde/Ldap.*) pear(Horde/Mail.*) pear(Horde/Nls.*) pear(Horde/Oauth.*) pear(Horde/Routes.*) pear(Horde/Service/Twitter.*) pear(Horde/SpellChecker.*) pear(Horde/Text/Filter.*) pear(Horde/Tree.*) pear(Horde/Vfs.*) pear(Net/DNS2.*) pear(Text/CAPTCHA.*) pear(Text/Figlet.*) pear(lzf.*)
 
@@ -97,13 +99,17 @@ In PEAR status of this package is: %{status}.
 %prep
 %pear_package_setup
 
+mv ./%{php_pear_dir}/www/horde .
+
 %build
 packagexml2cl package.xml > ChangeLog
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{php_pear_dir}
+install -d $RPM_BUILD_ROOT{%{php_pear_dir},%{hordedir}}
 %pear_package_install
+
+cp -a horde/* $RPM_BUILD_ROOT%{hordedir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -126,13 +132,12 @@ rm -rf $RPM_BUILD_ROOT
 %{php_pear_dir}/Horde/Themes.php
 %{php_pear_dir}/Horde/Config
 %{php_pear_dir}/Horde/Core
-%{php_pear_dir}/Horde/Exception
+%{php_pear_dir}/Horde/Exception/*.php
 %{php_pear_dir}/Horde/Registry
 %{php_pear_dir}/Horde/Script
 %{php_pear_dir}/Horde/Themes
 %{php_pear_dir}/data/Horde_Core
 
-# XXX, move to /usr/share/horde?
-%dir %{php_pear_dir}/www
-%dir %{php_pear_dir}/www/horde
-%{php_pear_dir}/www/horde/js
+%dir %{hordedir}
+%dir %{hordedir}/js
+%{hordedir}/js/*.js
