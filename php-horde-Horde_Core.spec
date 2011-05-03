@@ -6,13 +6,14 @@
 Summary:	%{pearname} - Horde Core Framework libraries
 Name:		php-horde-Horde_Core
 Version:	1.0.0
-Release:	1
+Release:	2
 License:	LGPL
 Group:		Development/Languages/PHP
 Source0:	http://pear.horde.org/get/%{pearname}-%{version}.tgz
 # Source0-md5:	23c6b00082c554e26b8fe2fe27ce121c
 URL:		https://github.com/horde/horde/tree/master/framework/Core/
 BuildRequires:	php-channel(pear.horde.org)
+BuildRequires:	php-horde-Horde_Role
 BuildRequires:	php-packagexml2cl
 BuildRequires:	php-pear-PEAR >= 1:1.7.0
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
