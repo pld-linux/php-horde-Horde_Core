@@ -5,12 +5,12 @@
 %include	/usr/lib/rpm/macros.php
 Summary:	%{pearname} - Horde Core Framework libraries
 Name:		php-horde-Horde_Core
-Version:	1.1.1
+Version:	1.3.1
 Release:	1
 License:	LGPL
 Group:		Development/Languages/PHP
 Source0:	http://pear.horde.org/get/%{pearname}-%{version}.tgz
-# Source0-md5:	20c3a207eff30f62b03312e5dba7978e
+# Source0-md5:	7dc98c165a8e45e7ce32eb93f2322218
 URL:		https://github.com/horde/horde/tree/master/framework/Core/
 BuildRequires:	php-channel(pear.horde.org)
 BuildRequires:	php-horde-Horde_Role
