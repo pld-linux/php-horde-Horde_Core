@@ -57,8 +57,11 @@ Requires:	php-horde-Horde_Url < 2.0.0
 Requires:	php-horde-Horde_Util < 2.0.0
 Requires:	php-horde-Horde_View < 2.0.0
 Requires:	php-pear >= 4:1.3.6-2
-Suggests:	php-dom
-Suggests:	php-hash
+Suggests:	php(dom)
+Suggests:	php(hash)
+Suggests:	php(lzf)
+Suggests:	php(simplexml)
+Suggests:	php(sockets)
 Suggests:	php-horde-Horde_Crypt
 Suggests:	php-horde-Horde_Db
 Suggests:	php-horde-Horde_Editor
@@ -83,9 +86,6 @@ Suggests:	php-horde-Horde_Vfs
 Suggests:	php-pear-Net_DNS2
 Suggests:	php-pear-Text_CAPTCHA
 Suggests:	php-pear-Text_Figlet
-Suggests:	php-pecl-lzf
-Suggests:	php-simplexml
-Suggests:	php-sockets
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
