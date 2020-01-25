@@ -2,7 +2,6 @@
 # - system locale dir
 %define		status		stable
 %define		pearname	Horde_Core
-%include	/usr/lib/rpm/macros.php
 Summary:	%{pearname} - Horde Core Framework libraries
 Name:		php-horde-Horde_Core
 Version:	1.9.2
