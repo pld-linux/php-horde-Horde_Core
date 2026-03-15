@@ -5,7 +5,7 @@
 Summary:	%{pearname} - Horde Core Framework libraries
 Name:		php-horde-Horde_Core
 Version:	1.9.2
-Release:	2
+Release:	3
 License:	LGPL
 Group:		Development/Languages/PHP
 Source0:	http://pear.horde.org/get/%{pearname}-%{version}.tgz
